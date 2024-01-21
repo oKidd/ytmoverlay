@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Music Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 380px;
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+            background-size: cover;
+            border-radius: 20px;
+        }
+
+        #bg {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+        }
+
+        #left {
+            padding: 10px;
+            height: 100%;
+            float: left;
+        }
+
+        #cover {
+            width: 80px;
+            border-radius: 15px;
+        }
+
+        #right {
+            padding: 10px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #title {
+            font-size: 20px;
+            padding: 5px;
+            padding-left: 0;
+            padding-bottom: 0;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #author {
+            font-size: 16px;
+            padding-bottom: 6px;
+        }
+
+        #seekbar {
+            padding: 10px;
+        }
+
+        #seekbarPosition {
+            float: left;
+            margin-right: 18px;
+        }
+
+        #seekbarPercent {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-progress-bar {
+            background-color: #000;
+            height: 3px;
+            margin-bottom: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+            filter: invert(1) saturate(0);
+        }
+
+        #duration {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="bg">
+            <section id="left">
+                <img id="cover" />
+            </section>
+            <section id="right">
+                <p id="title"></p>
+                <p id="author"></p>
+                <div id="seekbar">
+                    <p id="seekbarPosition"></p>
+                    <progress id="seekbarPercent" max="1" value="0.1"></progress>
+                    <p id="duration"></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script>
+        fetch('http://localhost:9863/query')
+            .then(response => response.json())
+            .then(data => {
+                // Aquí puedes manipular la respuesta en formato JSON
+
+                console.log(data);
+
+                // Saber si el reproductor esta pausado o no.
+                const isPaused = data.player.isPaused;
+                if (isPaused == false) {
+
+                    // Info de la cancion.
+                    const title = data.track.title;
+                    const Title = document.getElementById("title");
+                    Title.textContent = title;
+
+                    const author = data.track.author;
+                    const Author = document.getElementById("author");
+                    Author.textContent = author;
+
+                    const cover = data.track.cover;
+                    const Cover = document.getElementById("cover");
+                    Cover.src = cover;
+
+                    const container = document.getElementById("container");
+                    container.style.backgroundImage = `url('${cover}')`;
+
+                    const duration = data.track.durationHuman;
+                    const Duration = document.getElementById("duration");
+                    Duration.textContent = duration;
+
+                    // Saber en que minuto/segundo de la cancion esta posicionado el reproductor.
+                    // Ejemplo: 0:32
+                    const seekbarPosition = data.player.seekbarCurrentPositionHuman;
+                    const SeekbarPosition = document.getElementById("seekbarPosition");
+                    SeekbarPosition.textContent = seekbarPosition;
+
+                    // Este es el porcentaje de la barra de reproduccion, es decir:
+                    // 0 es el inicio de cancion, mientras que 1 es el final.
+                    const seekbarPercent = data.player.statePercent;
+                    const SeekbarPercent = document.getElementById("seekbarPercent");
+                    SeekbarPercent.value = seekbarPercent;
+
+                } else {
+                    const body = document.body;
+                    body.style.display = 'none';
+                }
+            });
+
+        // Función para recargar la página
+        function recargarPagina() {
+            location.reload();
+        }
+
+        // Configurar la recarga cada 1000 milisegundos (1 segundo)
+        setInterval(recargarPagina, 1000);
+    </script>
+</body>
+
+</html>

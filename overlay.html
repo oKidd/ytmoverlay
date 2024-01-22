@@ -11,6 +11,16 @@
             padding: 0;
         }
 
+        @keyframes anim {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
         #container {
             width: 380px;
             height: 100px;
@@ -115,7 +125,13 @@
                 console.log(data);
 
                 // Saber si el reproductor esta pausado o no.
-                const isPaused = data.player.isPaused;
+                let isPaused = data.player.isPaused;
+                const toggle = localStorage.getItem('isPaused');
+                console.log(toggle);
+                console.log(isPaused);
+
+                const container = document.getElementById("container");
+
                 if (isPaused == false) {
 
                     // Info de la cancion.
@@ -131,8 +147,11 @@
                     const Cover = document.getElementById("cover");
                     Cover.src = cover;
 
-                    const container = document.getElementById("container");
                     container.style.backgroundImage = `url('${cover}')`;
+                    if (toggle != isPaused.toString()) {
+                        container.style.animation = "anim 0.5s ease-in-out";
+                        localStorage.setItem('isPaused', isPaused);
+                    }
 
                     const duration = data.track.durationHuman;
                     const Duration = document.getElementById("duration");
@@ -151,9 +170,21 @@
                     SeekbarPercent.value = seekbarPercent;
 
                 } else {
-                    const body = document.body;
-                    body.style.display = 'none';
+                    if (toggle != isPaused.toString()) {
+                        container.style.animation = "anim 0.5s ease-in-out reverse";
+                        localStorage.setItem('isPaused', isPaused);
+                        const SeekbarPercent = document.getElementById("seekbarPercent");
+                        SeekbarPercent.style.opacity = 0;
+                    }else{
+                        container.style.display = "none";
+                    }
                 }
+                container.addEventListener('animationend', function () {
+                    container.style.animation = "";
+                    if(isPaused == true){
+                        container.style.display = "none";
+                    }
+                });
             });
 
         // Función para recargar la página

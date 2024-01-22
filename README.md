@@ -3,7 +3,7 @@
 ## Ejemplos:
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/b400ea66-5636-4a08-88a2-efa92fd565fa)
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/fa9b3f74-cc5f-402a-b5c7-58110b8bcf8f)
-
+(Próximamente subiré más diseños y formas de editar el estilo de tu overlay.).
 
 ## Requerimientos:
 - Descargar https://ytmdesktop.app/ - Youtube Music Desktop App By Microsoft
@@ -24,7 +24,7 @@
 - Examinar y abrir el archivo <a href="https://github.com/oKidd/ytmoverlay/blob/main/overlay.html">overlay.html</a><br>
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/3c8a5dfb-3bf2-44c9-b2eb-cfea621758f0)
 
-- Ajustar Ancho a 400px y Alto a 150px:<br>
+- Ajustar Ancho a 400px y Alto a 120px:<br>
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/9038dc78-0745-42b4-b27a-e4eecf239ebb)
 
 - Pulsar aceptar y listo!

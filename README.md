@@ -3,7 +3,7 @@
 ## Ejemplos:
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/b400ea66-5636-4a08-88a2-efa92fd565fa)
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/fa9b3f74-cc5f-402a-b5c7-58110b8bcf8f)
-(Próximamente subiré más diseños y formas de editar el estilo de tu overlay.).
+<br>(Próximamente subiré más diseños y formas de editar el estilo de tu overlay.).
 
 ## Requerimientos:
 - Descargar https://ytmdesktop.app/ - Youtube Music Desktop App By Microsoft

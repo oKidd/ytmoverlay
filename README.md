@@ -8,7 +8,7 @@
 <br><a href="https://obsproject.com/forum/resources/simple-youtube-music-overlay-for-obs.1871/">(English Tutorial)</a>
 
 ## Requerimientos:
-- Descargar https://ytmdesktop.app/ - Youtube Music Desktop App By Microsoft
+- Descargar https://ytmdesktop.app/ - Youtube Music Desktop App
 - Descargar archivo <a href="https://github.com/oKidd/ytmoverlay/blob/main/overlay.html">overlay.html</a>
 
 ## Configuracion Youtube Music Desktop App:

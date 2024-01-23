@@ -70,29 +70,40 @@
         }
 
         #seekbar {
-            padding: 10px;
+            width: 73%;
+            padding-top: 10px;
+            /* background-color: tomato; */
+            float: left;
         }
 
         #seekbarPosition {
             float: left;
-            margin-right: 18px;
+            /* background-color: rgb(109, 109, 255); */
+            width: 15%;
+            text-align: left;
+        }
+
+        #seekbarComplete {
+            float: left;
+            background-color: #fff;
+            width: 70%;
+            height: 2px;
+            margin-top: 8px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         #seekbarPercent {
-            -webkit-appearance: none;
-        }
-
-        ::-webkit-progress-bar {
-            background-color: #000;
-            height: 3px;
-            margin-bottom: 6px;
-            border-radius: 10px;
-            overflow: hidden;
-            filter: invert(1) saturate(0);
+            background-color: rgb(255, 91, 91);
+            height: 100%;
+            width: 50%;
         }
 
         #duration {
             float: right;
+            /* background-color: rgb(109, 109, 255); */
+            width: 15%;
+            text-align: right;
         }
     </style>
 </head>
@@ -108,13 +119,13 @@
                 <p id="author"></p>
                 <div id="seekbar">
                     <p id="seekbarPosition"></p>
-                    <progress id="seekbarPercent" max="1" value="0.1"></progress>
+                    <div id="seekbarComplete"><div id="seekbarPercent"></div></div>
                     <p id="duration"></p>
                 </div>
             </section>
         </div>
     </div>
-
+    <p id="percent"></p>
 
     <script>
         const container = document.getElementById("container");
@@ -166,9 +177,12 @@
 
                     // Este es el porcentaje de la barra de reproduccion, es decir:
                     // 0 es el inicio de cancion, mientras que 1 es el final.
-                    const seekbarPercent = data.player.statePercent;
+                    const seekbarPercent = data.player.statePercent * 100;
                     const SeekbarPercent = document.getElementById("seekbarPercent");
-                    SeekbarPercent.value = seekbarPercent;
+                    SeekbarPercent.style.width = `${seekbarPercent}%`;
+
+                    const percent = document.getElementById("percent");
+                    percent.textContent = seekbarPercent * 100;
 
                 } else {
                     if (toggle != isPaused.toString()) {

@@ -117,9 +117,12 @@
 
 
     <script>
+        const container = document.getElementById("container");
+        container.style.display = "none";
         fetch('http://localhost:9863/query')
             .then(response => response.json())
             .then(data => {
+                container.style.display = "block";
                 // Aquí puedes manipular la respuesta en formato JSON
 
                 console.log(data);
@@ -129,8 +132,6 @@
                 const toggle = localStorage.getItem('isPaused');
                 console.log(toggle);
                 console.log(isPaused);
-
-                const container = document.getElementById("container");
 
                 if (isPaused == false) {
 
@@ -175,16 +176,23 @@
                         localStorage.setItem('isPaused', isPaused);
                         const SeekbarPercent = document.getElementById("seekbarPercent");
                         SeekbarPercent.style.opacity = 0;
-                    }else{
+                    } else {
                         container.style.display = "none";
                     }
                 }
                 container.addEventListener('animationend', function () {
                     container.style.animation = "";
-                    if(isPaused == true){
+                    if (isPaused == true) {
                         container.style.display = "none";
                     }
                 });
+            })
+            .catch(error => {
+                console.error('Fetch error:', error.message);
+
+                if (error.message === 'Failed to fetch') {
+                    container.style.display = "none";
+                }
             });
 
         // Función para recargar la página
@@ -194,6 +202,7 @@
 
         // Configurar la recarga cada 1000 milisegundos (1 segundo)
         setInterval(recargarPagina, 1000);
+
     </script>
 </body>
 

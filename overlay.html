@@ -125,7 +125,6 @@
             </section>
         </div>
     </div>
-    <p id="percent"></p>
 
     <script>
         const container = document.getElementById("container");
@@ -180,9 +179,6 @@
                     const seekbarPercent = data.player.statePercent * 100;
                     const SeekbarPercent = document.getElementById("seekbarPercent");
                     SeekbarPercent.style.width = `${seekbarPercent}%`;
-
-                    const percent = document.getElementById("percent");
-                    percent.textContent = seekbarPercent * 100;
 
                 } else {
                     if (toggle != isPaused.toString()) {

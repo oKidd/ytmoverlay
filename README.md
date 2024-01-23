@@ -13,7 +13,8 @@
 
 ## Configuracion Youtube Music Desktop App:
 - Ir a "Ajustes" > "Integrations" > activar "Remote control":<br>
-![image](https://github.com/oKidd/ytmoverlay/assets/75717165/f334cefa-0437-4244-9fde-cc30ce278a99)
+![image](https://github.com/oKidd/ytmoverlay/assets/75717165/468d852b-1004-42a4-a5fc-3c8b8782a5dd)
+
 
 ## Configuracion OBS:
 - Agregar fuente Navegador:<br>

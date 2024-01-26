@@ -4,8 +4,7 @@
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/b400ea66-5636-4a08-88a2-efa92fd565fa)
 ![image](https://github.com/oKidd/ytmoverlay/assets/75717165/fa9b3f74-cc5f-402a-b5c7-58110b8bcf8f)
 
-# Ahora puedes editar tu overlay antes de descargarlo desde mi pagina web:
-## http://okidd.store/
+# Ahora puedes editar tu overlay antes de descargarlo desde mi pagina web: http://okidd.store/
 <br>
 <br><a href="https://obsproject.com/forum/resources/simple-youtube-music-overlay-for-obs.1871/">(English Tutorial)</a>
 

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Music Overlay</title>
+    <style id="css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            /* Para navegadores basados en WebKit (como Chrome y Safari) */
+            -moz-user-select: none;
+            /* Para navegadores basados en Gecko (como Firefox) */
+            -ms-user-select: none;
+            /* Para Internet Explorer/Edge */
+        }
+
+        @keyframes anim {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #container {
+            width: 380px;
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+            background-size: cover;
+            border-radius: 20px;
+        }
+
+        .bg-none {
+            background-image: none !important;
+        }
+
+        #bg {
+            height: 100%;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        #left {
+            padding: 10px;
+            height: 100%;
+        }
+
+        @keyframes cover {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #cover {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            animation-duration: 5s;
+            object-fit: cover;
+        }
+
+        .cover-animation {
+            animation: cover infinite linear;
+        }
+
+        .cover-display {
+            display: none;
+        }
+
+        #right {
+            padding: 10px;
+            flex-grow: 1;
+            color: rgba(255, 255, 255, 1);
+            font-family: Arial;
+        }
+
+        #title {
+            width: 93%;
+            padding: 5px;
+            padding-left: 0;
+            padding-bottom: 0;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 240px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #author {
+            width: 93%;
+            padding-bottom: 6px;
+            font-size: 16px;
+            font-weight: lighter;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 240px;
+        }
+
+        #seekbar {
+            box-sizing: border-box;
+            width: 93%;
+            margin-top: 10px;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #seekbarPosition {
+            float: left;
+            width: 17.5%;
+            text-align: left;
+        }
+
+        #seekbarComplete {
+            float: left;
+            background-color: #fff;
+            width: 65%;
+            height: 3px;
+            /* margin-top: 8px; */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #seekbarPercent {
+            background-color: rgb(255, 91, 91);
+            height: 100%;
+            width: 1%;
+        }
+
+        #duration {
+            float: right;
+            width: 17.5%;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="bg">
+            <div id="left">
+                <img id="cover" />
+            </div>
+            <div id="right">
+                <p id="title"></p>
+                <p id="author"></p>
+                <div id="seekbar" class="vertical-center">
+                    <p id="seekbarPosition"></p>
+                    <div id="seekbarComplete">
+                        <div id="seekbarPercent"></div>
+                    </div>
+                    <p id="duration"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="test-info.js"></script>
+</body>
+
+</html>

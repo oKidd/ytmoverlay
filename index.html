@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oKidd's Widgets</title>
+    <link rel="icon" type="image/x-icon" href="https://obsproject.com/forum/data/resource_icons/1/1871.jpg?1705899851">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <style id="fontStyles">
+    </style>
+</head>
+
+<body>
+    <div id="popup" class="popup">
+        <div class="content-popup">
+            <div class="popup-left">
+                <h1>Your download is ready!</h1>
+                <p>Your download has begun. If you need assistance with installing and using the overlay, please refer to the tutorial on the right for step-by-step guidance.</p>
+            </div>
+            <div class="popup-right">
+                <iframe id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=PlgvKGhg0RvggR5r" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <button class="close-popup" onclick="popup()">
+        </button>
+    </div>
+    <nav class="nav">
+        <h1 class="title vertical-center">oKidd's simple website</h1>
+        <div class="links">
+            <a href="https://github.com/oKidd/ytmoverlay" target="_blank">
+                <img class="icon invert" src="https://img.icons8.com/?size=1080&id=106562&format=png" />
+            </a>
+        </div>
+    </nav>
+    <div class="left">
+        <iframe id="frame" class="vertical-center" src="overlay/overlay.html"></iframe>
+        <div class="bottom-menu">
+            <button id="download" class="download">
+                <iframe id="script" class="hidden-frame" src="/overlay/script.html"></iframe>
+                Download Overlay
+            </button>
+            <!-- <button id="screenshot">
+                <img src="https://img.icons8.com/?size=1080&id=87219&format=png">
+            </button> -->
+        </div>
+    </div>
+    <div class="right">
+        <section class="panel">
+            <h1>Config Panel <img class="invert" src="https://img.icons8.com/?size=1080&id=83214&format=png"></h1>
+            <button id="background" class="option">
+                Background
+                <img class="invert selected" src="https://img.icons8.com/?size=1080&id=87356&format=png">
+            </button>
+            <form id="bg-options" class="submenu">
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=84164&format=png">
+                    <p for="bg-image">Image</p>
+                    <input type="checkbox" id="bg-image" value="bg-image" checked>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=86317&format=png">
+                    <p for="bg-color">Color</p>
+                    <input type="color" id="bg-color">
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=98595&format=png">
+                    <p for="bg-opacity">Opacity</p>
+                    <input type="range" id="bg-opacity" min="0" max="1" step="0.1">
+                    <p id="bg-opacity-value" class="range-value"></p>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=98652&format=png">
+                    <p for="bg-rounded">Rounded Level</p>
+                    <input type="range" id="bg-rounded" min="0" max="50">
+                    <p id="bg-rounded-value" class="range-value"></p>
+                </div>
+            </form>
+            <button id="text" class="option">
+                Text
+                <img class="invert" src="https://img.icons8.com/?size=1080&id=87356&format=png">
+            </button>
+            <form id="text-options" class="hidden submenu">
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=111872&format=png">
+                    <p for="text-font">Font</p>
+                    <select id="text-font">
+                        <option value="Arial" selected>Google Fonts</option>
+                    </select>
+                    <a target="_blank" href="https://fonts.google.com/"><img class="range-value invert" src="https://img.icons8.com/?size=1080&id=83168&format=png" /></a>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=86317&format=png">
+                    <p for="text-color">Color</p>
+                    <input type="color" id="text-color">
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=99806&format=png">
+                    <p for="title-size">Title Size</p>
+                    <input type="range" id="title-size" min="0" max="20">
+                    <p id="title-size-value" class="range-value"></p>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=99735&format=png">
+                    <p for="artist-size">Artist Size</p>
+                    <input type="range" id="artist-size" min="0" max="20">
+                    <p id="artist-size-value" class="range-value"></p>
+                </div>
+            </form>
+            <button class="option">
+                Cover
+                <img class="invert" src="https://img.icons8.com/?size=1080&id=87356&format=png">
+            </button>
+            <form id="cover-options" class="hidden submenu">
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=85137&format=png">
+                    <p for="cover-visible">Visible</p>
+                    <input type="checkbox" id="cover-visible" value="cover" checked>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=98652&format=png">
+                    <p for="rounded-cover">Rounded Level</p>
+                    <input type="range" id="rounded-cover" min="0" max="40">
+                    <p id="rounded-cover-value" class="range-value"></p>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=DgDRJRRLH70u&format=png">
+                    <p for="spinning-cover">Spinning Cover</p>
+                    <input type="checkbox" id="spinning-cover">
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=piCS68q7uPGh&format=png">
+                    <p for="duration-cover">Spinning Time</p>
+                    <input type="range" id="duration-cover" min="1" max="5">
+                    <p id="duration-cover-value" class="range-value"></p>
+                </div>
+            </form>
+            <button class="option">
+                Seekbar
+                <img class="invert" src="https://img.icons8.com/?size=1080&id=87356&format=png">
+            </button>
+            <form id="seekbar-options" class="hidden submenu">
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=89848&format=png">
+                    <p for="seekbar-main-color">Main Color</p>
+                    <input type="color" id="seekbar-main-color">
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=86317&format=png">
+                    <p for="seekbar-secondary-color">Secondary Color</p>
+                    <input type="color" id="seekbar-secondary-color">
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=98062&format=png">
+                    <p for="seekbar-height">Height</p>
+                    <input type="range" id="seekbar-height" min="1" max="10">
+                    <p id="seekbar-height-value" class="range-value"></p>
+                </div>
+                <div class="sub-option">
+                    <img class="invert icon" src="https://img.icons8.com/?size=1080&id=98652&format=png">
+                    <p for="seekbar-rounded">Rounded Level</p>
+                    <input type="range" id="seekbar-rounded" min="0" max="5">
+                    <p id="seekbar-rounded-value" class="range-value"></p>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+<script src="js/options.js"></script>
+<script src="js/fonts.js"></script>
+<script src="js/background.js"></script>
+<script src="js/range.js"></script>
+<script src="js/color.js"></script>
+<script src="js/text.js"></script>
+<script src="js/cover.js"></script>
+<script src="js/seekbar.js"></script>
+<script src="js/download.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/essentials.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="js/screenshot.js"></script>
+</html>

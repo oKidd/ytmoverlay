@@ -10,7 +10,7 @@
 
 ## Requerimientos:
 - Descargar https://ytmdesktop.app/ - Youtube Music Desktop App
-- Descargar archivo <a href="https://github.com/oKidd/ytmoverlay/blob/main/overlay.html">overlay.html</a>
+- Descargar archivo <a href="https://github.com/oKidd/ytmoverlay/blob/main/YTMOverlay%201.0.0.html">overlay.html</a>
 
 ## Configuracion Youtube Music Desktop App:
 - Ir a "Ajustes" > "Integrations" > activar "Remote control":<br>

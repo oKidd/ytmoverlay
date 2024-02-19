@@ -29,10 +29,6 @@ document.getElementById('download').addEventListener('click', function () {
   const savedDuration = duration.textContent;
   duration.textContent = "";
 
-  const seekbarPercent = contenidoIndex.getElementById('seekbarPercent');
-  const savedPercent = seekbarPercent.style.width;
-  seekbarPercent.style = "";
-
   // Obtener el contenido HTML del iframe
   contenidoIndex = contenidoIndex.documentElement.outerHTML;
 
@@ -43,7 +39,6 @@ document.getElementById('download').addEventListener('click', function () {
   author.textContent = savedAuthor;
   seekbarPosition.textContent = savedPosition;
   duration.textContent = savedDuration;
-  seekbarPercent.style.width = savedPercent;
 
   // Obtener el contenido del textarea con id "js" del elemento con id "script"
   const script = document.getElementById('script').contentDocument;

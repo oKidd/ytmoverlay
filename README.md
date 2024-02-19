@@ -9,4 +9,4 @@
 <br>
 <br><a href="https://obsproject.com/forum/resources/simple-youtube-music-overlay-for-obs.1871/">(English Tutorial)</a>
 
-[MEDIA=youtube]snGA1xatSOQ[/MEDIA]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/snGA1xatSOQ?si=XRdM1aef4H69o89r" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

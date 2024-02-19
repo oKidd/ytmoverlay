@@ -9,4 +9,4 @@
 <br>
 <br><a href="https://obsproject.com/forum/resources/simple-youtube-music-overlay-for-obs.1871/">(English Tutorial)</a>
 
-[![Tutorial](https://www.youtube.com/watch?v=snGA1xatSOQ)](https://www.youtube.com/watch?v=snGA1xatSOQ)
+[![Ver el Video](https://img.youtube.com/vi/snGA1xatSOQ/0.jpg)](https://www.youtube.com/watch?v=snGA1xatSOQ)

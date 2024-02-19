@@ -6,7 +6,5 @@
 ![rounded-white-bg](https://github.com/oKidd/ytmoverlay/assets/75717165/6fcf90f0-3b04-49d7-991c-add0e3d0505f)
 
 # Ahora puedes editar tu overlay antes de descargarlo desde mi pagina web: http://okidd.store/
-<br>
-<br><a href="https://obsproject.com/forum/resources/simple-youtube-music-overlay-for-obs.1871/">(English Tutorial)</a>
 
-[![Ver el Video](https://img.youtube.com/vi/snGA1xatSOQ/0.jpg)](https://www.youtube.com/watch?v=snGA1xatSOQ)
+[![Tutorial](https://img.youtube.com/vi/snGA1xatSOQ/0.jpg)](https://www.youtube.com/watch?v=snGA1xatSOQ)

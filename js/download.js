@@ -12,12 +12,38 @@ document.getElementById('download').addEventListener('click', function () {
   const savedCover = cover.getAttribute('src');
   cover.removeAttribute('src');
 
+  // Limpiar contenidos textos
+  const title = contenidoIndex.getElementById('title');
+  const savedTitle = title.textContent;
+  title.textContent = "";
+
+  const author = contenidoIndex.getElementById('author');
+  const savedAuthor = author.textContent;
+  author.textContent = "";
+
+  const seekbarPosition = contenidoIndex.getElementById('seekbarPosition');
+  const savedPosition = seekbarPosition.textContent;
+  seekbarPosition.textContent = "";
+
+  const duration = contenidoIndex.getElementById('duration');
+  const savedDuration = duration.textContent;
+  duration.textContent = "";
+
+  const seekbarPercent = contenidoIndex.getElementById('seekbarPercent');
+  const savedPercent = seekbarPercent.style.width;
+  seekbarPercent.style = "";
+
   // Obtener el contenido HTML del iframe
   contenidoIndex = contenidoIndex.documentElement.outerHTML;
 
   // Restaurar el estilo de fondo del elemento con id "container" y el atributo "src" del elemento con id "cover"
   container.style.backgroundImage = savedContainer;
   cover.setAttribute('src', savedCover);
+  title.textContent = savedTitle;
+  author.textContent = savedAuthor;
+  seekbarPosition.textContent = savedPosition;
+  duration.textContent = savedDuration;
+  seekbarPercent.style.width = savedPercent;
 
   // Obtener el contenido del textarea con id "js" del elemento con id "script"
   const script = document.getElementById('script').contentDocument;

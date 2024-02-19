@@ -1,29 +1,3 @@
-// document.getElementById('screenshot').addEventListener('click', function () {
-//     const frame = document.getElementById('frame').contentDocument;
-//     const elementToScreenshot = frame.getElementById('html');
-
-//     // Usa dom-to-image para capturar el elemento como una imagen
-//     domtoimage.toPng(elementToScreenshot)
-//         .then(function (dataUrl) {
-//             // Crea un enlace <a> con el screenshot como URL de datos
-//             const screenshotLink = document.createElement('a');
-//             screenshotLink.href = dataUrl;
-
-//             // Establece el nombre del archivo para la descarga del screenshot
-//             screenshotLink.download = 'screenshot.png';
-
-//             // Simula un clic en el enlace para iniciar la descarga del screenshot
-//             screenshotLink.click();
-
-//             // Ahora puedes hacer lo mismo para otras imágenes si es necesario
-//             // ...
-
-//         })
-//         .catch(function (error) {
-//             console.error('Error al capturar la imagen:', error);
-//         });
-// });
-
 const capture = async () => {
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
@@ -61,5 +35,3 @@ const capture = async () => {
         console.error("Error: " + err);
     }
 };
-
-document.getElementById('screenshot').addEventListener('click', capture);
